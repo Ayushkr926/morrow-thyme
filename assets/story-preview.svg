@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Morrow &amp; Thyme story page preview</title>
+  <desc id="desc">Illustrated Our Story page preview with a candlelit table, the restaurant's beginnings, values, and team.</desc>
+  <defs><linearGradient id="dining" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b58a5d"/><stop offset="1" stop-color="#384432"/></linearGradient></defs>
+  <rect width="960" height="520" rx="18" fill="#f3efe6"/>
+  <rect width="960" height="25" rx="18" fill="#374733"/><rect y="17" width="960" height="8" fill="#374733"/>
+  <text x="480" y="17" text-anchor="middle" fill="#f3efe6" font-family="Arial,sans-serif" font-size="8" letter-spacing="2">WARM ROOMS, GOOD COMPANY, SLOWER EVENINGS</text>
+  <text x="52" y="65" fill="#1d241d" font-family="Georgia,serif" font-size="27" letter-spacing="-2">morrow &amp; thyme</text>
+  <text x="53" y="80" fill="#6d7267" font-family="Arial,sans-serif" font-size="7" letter-spacing="2">NEIGHBORHOOD KITCHEN · SINCE 2018</text>
+  <g fill="#374733" font-family="Arial,sans-serif" font-size="10"><text x="600" y="67">Home</text><text x="655" y="67">Menu</text><text x="705" y="67" fill="#c85f46">Our story</text><text x="780" y="67">Visit</text></g>
+  <rect x="833" y="48" width="77" height="31" fill="#374733"/><text x="871" y="67" text-anchor="middle" fill="#fffaf0" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">BOOK A TABLE</text>
+  <path d="M0 94h960" stroke="#d7d0c3"/>
+  <text x="62" y="124" fill="#c85f46" font-family="Arial,sans-serif" font-size="8" letter-spacing="2">OUR STORY / SMALL BEGINNINGS</text>
+  <text x="60" y="174" fill="#1d241d" font-family="Georgia,serif" font-size="39" letter-spacing="-2">We wanted a room where</text>
+  <text x="60" y="218" fill="#1d241d" font-family="Georgia,serif" font-size="39" letter-spacing="-2">good evenings felt easy.</text>
+  <text x="62" y="247" fill="#6d7267" font-family="Arial,sans-serif" font-size="11">A tiny neighborhood dinner grew into a table full of regulars, farmers, and friends.</text>
+  <rect x="62" y="277" width="360" height="159" fill="url(#dining)"/>
+  <rect x="82" y="293" width="112" height="87" fill="#35402f"/><rect x="204" y="293" width="94" height="87" fill="#2c392b"/><rect x="309" y="293" width="93" height="87" fill="#424333"/>
+  <path d="M82 380h112m10 0h94m11 0h93" stroke="#ae855e" stroke-width="4"/>
+  <path d="M139 293v31m-16 0h32l-7 20h-18zM252 293v31m-16 0h32l-7 20h-18zM356 293v31m-16 0h32l-7 20h-18z" fill="#edc278"/>
+  <ellipse cx="240" cy="406" rx="120" ry="17" fill="#d5c6a9"/><ellipse cx="240" cy="402" rx="78" ry="12" fill="#f3efe6"/>
+  <text x="464" y="293" fill="#c85f46" font-family="Arial,sans-serif" font-size="8" letter-spacing="2">MORE THAN A RESTAURANT</text>
+  <text x="460" y="333" fill="#1d241d" font-family="Georgia,serif" font-size="27">A neighborhood table,</text>
+  <text x="460" y="363" fill="#1d241d" font-family="Georgia,serif" font-size="27">built by people who stayed.</text>
+  <text x="464" y="395" fill="#6d7267" font-family="Arial,sans-serif" font-size="10">One lamp, two friends, and a market-led menu.</text>
+  <text x="464" y="414" fill="#6d7267" font-family="Arial,sans-serif" font-size="10">Today, the long table still has room for everyone.</text>
+  <g font-family="Georgia,serif" font-size="18" fill="#374733"><text x="100" y="476">Seasonal</text><text x="352" y="476">Thoughtful</text><text x="624" y="476">Welcoming</text></g>
+  <path d="M62 486h800" stroke="#d7d0c3"/>
+  <text x="895" y="503" text-anchor="end" fill="#6d7267" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">A LONG TABLE · SINCE 2018</text>
+</svg>

@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Morrow & Thyme - a warm neighborhood restaurant for slow dinners and seasonal plates." />
+    <title>Morrow & Thyme | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --paper:#f3efe6;
+        --paper-2:#ebe4d7;
+        --ink:#1d241d;
+        --olive:#374733;
+        --olive-soft:#5b6c52;
+        --gold:#d9a66d;
+        --gold-soft:#efd7b0;
+        --terracotta:#c85f46;
+        --muted:#6d7267;
+        --line:#d7d0c3;
+        --shadow:0 24px 70px rgba(31,39,29,.15);
+        --serif:"Cormorant Garamond", Georgia, serif;
+        --sans:"DM Sans", Arial, sans-serif;
+      }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body{
+        margin:0;
+        font-family:var(--sans);
+        background:var(--paper);
+        color:var(--ink);
+        -webkit-font-smoothing:antialiased;
+      }
+      body::before{
+        content:"";
+        position:fixed; inset:0;
+        background:radial-gradient(circle at top left, rgba(217,166,109,.10), transparent 35%);
+        pointer-events:none; z-index:-1;
+      }
+      a{ color:inherit; text-decoration:none; }
+      button,input,select{ font:inherit; }
+      img{ display:block; max-width:100%; }
+      .announcement{
+        background:var(--olive);
+        color:#f3efe6;
+        font-size:10px;
+        letter-spacing:.18em;
+        text-transform:uppercase;
+        display:flex; align-items:center; justify-content:center; gap:12px;
+        height:36px;
+      }
+      .announcement .dot{ color:var(--gold); }
+      .nav{
+        position:sticky; top:0; z-index:20;
+        display:flex; align-items:center; justify-content:space-between;
+        padding:0 6.5%;
+        height:80px; background:rgba(243,239,230,.92); backdrop-filter:blur(14px);
+        border-bottom:1px solid rgba(29,36,29,.10);
+      }
+      .brand{
+        font-family:var(--serif); font-size:2.1rem; letter-spacing:-.06em; line-height:.9;
+      }
+      .brand small{
+        display:block; font-family:var(--sans); font-size:9px; letter-spacing:.20em; text-transform:uppercase; color:var(--muted); margin-top:6px;
+      }
+      .nav-links{
+        display:flex; align-items:center; gap:2.2rem; font-size:.78rem; letter-spacing:.04em; text-transform:none;
+      }
+      .nav-links a{ position:relative; opacity:.8; transition:opacity .2s ease, color .2s ease; }
+      .nav-links a:hover, .nav-links a[aria-current="page"]{ color:var(--terracotta); opacity:1; }
+      .nav-links a::after{
+        content:""; position:absolute; left:0; right:0; bottom:-7px; height:1px; background:var(--terracotta);
+        transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+      }
+      .nav-links a:hover::after, .nav-links a[aria-current="page"]::after{ transform:scaleX(1); }
+      .nav-cta, .button-dark, .button-light{
+        border:none; cursor:pointer; transition:transform .22s ease, background .22s ease, border-color .22s ease;
+      }
+      .nav-cta, .button-dark{
+        background:var(--olive); color:#faf6ef; padding:14px 22px;
+        font-size:10px; letter-spacing:.18em; text-transform:uppercase; border:1px solid var(--olive);
+      }
+      .nav-cta:hover, .button-dark:hover, .button-light:hover{
+        transform:translateY(-2px);
+      }
+      .nav-cta:hover, .button-dark:hover{
+        background:var(--terracotta); border-color:var(--terracotta);
+      }
+      .menu-toggle{
+        display:none; background:transparent; border:none; font-size:1.65rem; cursor:pointer;
+      }
+
+      .page-shell{
+        animation:pageIn .7s ease both;
+      }
+      @keyframes pageIn{
+        from{ opacity:0; transform:translateY(18px); }
+        to{ opacity:1; transform:translateY(0); }
+      }
+
+      .hero{
+        display:grid; grid-template-columns:1.05fr 1fr; gap:4rem;
+        padding:5.5rem 6.5% 4.5rem; align-items:center;
+      }
+      .eyebrow{
+        font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--terracotta);
+        font-weight:700;
+      }
+      .hero-copy h1, .page-banner h1, .page-heading{
+        margin:1.2rem 0 1.1rem; font-family:var(--serif);
+        font-weight:600; letter-spacing:-.05em; line-height:.88;
+      }
+      .hero-copy h1{
+        font-size:clamp(4.1rem,7vw,8rem);
+      }
+      .hero-copy h1 em{
+        font-style:italic; color:var(--terracotta);
+      }
+      .hero-copy p{
+        max-width:470px; color:var(--muted); font-size:1.06rem; line-height:1.8;
+      }
+      .hero-actions{
+        display:flex; align-items:center; gap:2rem; flex-wrap:wrap; margin-top:2.2rem;
+      }
+      .text-link{
+        font-size:10px; letter-spacing:.18em; text-transform:uppercase; padding-bottom:7px;
+        border-bottom:1px solid rgba(29,36,29,.35); transition:border-color .2s ease, color .2s ease;
+      }
+      .text-link:hover{ color:var(--terracotta); border-color:var(--terracotta); }
+      .hero-meta{
+        display:flex; align-items:center; gap:1rem; margin-top:3rem; color:var(--muted); font-size:.8rem;
+      }
+      .avatars{ display:flex; padding-left:4px; }
+      .avatar{
+        width:30px; height:30px; border-radius:50%; border:2px solid var(--paper);
+        background-size:cover; background-position:center; margin-left:-6px;
+      }
+      .avatar:first-child{ margin-left:0; }
+      .avatar:nth-child(1){ background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80'); }
+      .avatar:nth-child(2){ background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80'); }
+      .avatar:nth-child(3){ background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80'); }
+
+      .hero-visual{
+        position:relative; min-height:570px; display:grid; place-items:center;
+      }
+      .hero-card{
+        position:relative; width:min(100%,600px); height:560px; border-radius:42% 42% 0 0 / 46% 46% 0 0;
+        overflow:hidden; box-shadow:var(--shadow); background:#d8d0c4;
+        animation:floatImage 7s ease-in-out infinite alternate;
+      }
+      @keyframes floatImage{
+        0% { transform:translateY(0); }
+        100% { transform:translateY(-12px); }
+      }
+      .hero-card img{ width:100%; height:100%; object-fit:cover; filter:saturate(.8); }
+      .floating-tag{
+        position:absolute; left:-22px; bottom:30px; width:138px; height:138px;
+        border-radius:50%; background:var(--gold-soft); display:grid; place-items:center;
+        text-align:center; font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+        line-height:1.6; transform:rotate(-11deg); box-shadow:0 16px 35px rgba(39,47,34,.12);
+      }
+      .floating-caption{
+        position:absolute; right:18px; bottom:16px; background:rgba(243,239,230,.88); backdrop-filter:blur(8px);
+        padding:12px 18px; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+      }
+      .marquee{
+        background:#e4ddd0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+        overflow:hidden; white-space:nowrap;
+      }
+      .marquee-track{
+        display:flex; width:max-content; animation:marquee 32s linear infinite;
+      }
+      .marquee-item{
+        font-family:var(--serif); font-style:italic; font-size:1.7rem; color:var(--olive); padding:0 2rem;
+      }
+      .marquee-item span{ color:var(--terracotta); font-size:.72rem; vertical-align:middle; margin-left:2rem; font-family:var(--sans); font-style:normal; letter-spacing:.25em; text-transform:uppercase; }
+      @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+      .section{
+        padding:6.2rem 6.5%;
+      }
+      .section-head{
+        display:flex; justify-content:space-between; gap:1.5rem; align-items:end; margin-bottom:2.3rem;
+      }
+      .page-heading{
+        font-size:clamp(3rem,6vw,5.2rem);
+      }
+      .section-head p{
+        max-width:420px; color:var(--muted); line-height:1.9; font-size:.88rem;
+      }
+
+      .menu-showcase{
+        background:#ece4d8; padding:4.5rem 6.5% 6rem;
+      }
+      .filter-row{
+        display:flex; flex-wrap:wrap; gap:.7rem; margin-bottom:2rem;
+      }
+      .filter{
+        border:1px solid rgba(39,52,36,.25); background:transparent; color:var(--ink);
+        padding:10px 16px; font-size:10px; letter-spacing:.18em; text-transform:uppercase; cursor:pointer;
+        transition:all .2s ease;
+      }
+      .filter.active, .filter:hover{
+        background:var(--olive); border-color:var(--olive); color:#f3efe6;
+      }
+      .dish-grid{
+        display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1.2rem;
+      }
+      .dish-card{
+        background:var(--paper); box-shadow:0 10px 26px rgba(31,39,29,.05); overflow:hidden;
+        transition:transform .25s ease, box-shadow .25s ease;
+      }
+      .dish-card:hover{
+        transform:translateY(-6px); box-shadow:0 18px 34px rgba(31,39,29,.09);
+      }
+      .dish-card img{
+        width:100%; height:250px; object-fit:cover; transition:transform .65s ease;
+      }
+      .dish-card:hover img{ transform:scale(1.07); }
+      .dish-content{
+        padding:1.1rem 1.1rem 1.4rem;
+      }
+      .dish-top{
+        display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:.35rem;
+      }
+      .dish-name{
+        font-family:var(--serif); font-size:2rem; letter-spacing:-.04em;
+      }
+      .dish-price{
+        color:var(--terracotta); font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700;
+      }
+      .dish-tag{
+        display:inline-block; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+        margin-bottom:.75rem;
+      }
+      .dish-copy{
+        margin:0; color:var(--muted); font-size:.86rem; line-height:1.7;
+      }
+
+      .story-grid{
+        display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;
+      }
+      .story-grid img{
+        width:100%; height:550px; object-fit:cover; box-shadow:var(--shadow);
+      }
+      .story-stack{
+        display:grid; grid-template-columns:1fr 0.7fr; gap:1rem; align-items:end;
+      }
+      .story-stack img:last-child{
+        height:250px; transform:translateY(-22px); border:8px solid var(--paper);
+      }
+      .story-text p{
+        color:var(--muted); line-height:1.95; font-size:1rem; margin:1.2rem 0 1.8rem;
+      }
+      .signature{
+        font-family:var(--serif); font-size:2.1rem; font-style:italic; color:var(--olive);
+      }
+      .story-stats{
+        display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1rem; margin-top:2.1rem;
+      }
+      .story-stat{
+        padding:1.4rem 1rem; background:var(--paper-2); border-top:2px solid var(--gold);
+      }
+      .story-stat strong{
+        display:block; font-family:var(--serif); font-size:2.1rem; margin-bottom:.3rem; color:var(--olive);
+      }
+      .story-stat span{
+        font-size:9px; text-transform:uppercase; letter-spacing:.18em; color:var(--muted);
+      }
+
+      .quote-band{
+        padding:5rem 10%; background:var(--olive); color:#f2efe7; text-align:center;
+      }
+      .quote-mark{
+        font-family:var(--serif); font-size:6rem; line-height:.7; color:var(--gold);
+      }
+      blockquote{
+        max-width:820px; margin:.7rem auto 1.3rem; font-family:var(--serif); font-size:clamp(2.2rem,4vw,4rem);
+        line-height:1; letter-spacing:-.04em;
+      }
+      .quote-band cite{
+        font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:#dfe0d4;
+      }
+
+      .visit-layout{
+        display:grid; grid-template-columns:0.92fr 1.08fr; gap:3rem; align-items:start;
+      }
+      .visit-list{ display:grid; gap:1.2rem; }
+      .visit-item{
+        padding-top:1.2rem; border-top:1px solid var(--line);
+      }
+      .visit-item:first-child{ padding-top:0; border-top:none; }
+      .visit-item .label{
+        color:var(--terracotta); font-size:9px; letter-spacing:.2em; text-transform:uppercase; font-weight:700;
+      }
+      .visit-item .value{
+        margin-top:.7rem; font-size:1rem; line-height:1.8; color:var(--muted);
+      }
+      .map-card{
+        position:relative; overflow:hidden; box-shadow:var(--shadow);
+      }
+      .map-card img{
+        width:100%; height:100%; min-height:420px; object-fit:cover; filter:saturate(.7);
+      }
+      .map-pin{
+        position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+        background:rgba(243,239,230,.95); padding:18px 24px; text-align:center; backdrop-filter:blur(12px);
+      }
+      .map-pin strong{
+        display:block; font-family:var(--serif); font-size:2rem; letter-spacing:-.04em; line-height:1;
+      }
+      .map-pin span{
+        display:block; margin-top:.45rem; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+      }
+
+      .page-banner{
+        position:relative; overflow:hidden; padding:5rem 6.5% 4rem; background:#ece4d8;
+      }
+      .page-banner::after{
+        content:"✦"; position:absolute; right:8%; top:12%; font-size:clamp(8rem,18vw,22rem); color:rgba(114,124,103,.12);
+        animation:spin 42s linear infinite;
+      }
+      @keyframes spin{
+        to{ transform:rotate(360deg); }
+      }
+      .page-banner .crumb{
+        font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);
+      }
+      .page-banner h1{
+        font-size:clamp(4rem,7vw,8rem); margin-top:1rem; max-width:900px;
+      }
+      .page-banner p{
+        max-width:520px; color:var(--muted); line-height:1.9; font-size:.98rem; margin-top:1rem;
+      }
+      .page-content{ padding:4rem 6.5% 6rem; }
+      .story-values, .timeline{
+        display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1rem; margin-top:2.5rem;
+      }
+      .story-card, .timeline-card{
+        background:var(--paper); padding:1.6rem 1.5rem; border-top:2px solid var(--gold);
+      }
+      .story-card strong, .timeline-card strong{
+        display:block; font-family:var(--serif); font-size:2rem; margin-bottom:.65rem;
+      }
+      .story-card p, .timeline-card p{
+        margin:0; color:var(--muted); line-height:1.8; font-size:.85rem;
+      }
+      .timeline-card{ border-top-color:var(--terracotta); }
+      .team-row{
+        display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1rem; margin-top:2.5rem;
+      }
+      .team-card{
+        display:flex; align-items:center; gap:1rem; padding:1rem; background:#f8f4ee; border:1px solid rgba(29,36,29,.08);
+      }
+      .team-card img{
+        width:80px; height:80px; object-fit:cover; border-radius:50%;
+      }
+      .team-card strong{ display:block; font-family:var(--serif); font-size:1.8rem; }
+      .team-card span{ font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+
+      .callout{
+        display:flex; align-items:center; justify-content:space-between; gap:1rem;
+        background:var(--olive); color:#f4efe8; padding:2.2rem 2.4rem; margin-top:3rem;
+      }
+      .callout h3{ margin:0 0 .25rem; font-size:clamp(2rem,4vw,3.2rem); font-family:var(--serif); letter-spacing:-.04em; }
+      .callout p{ margin:0; color:#dfe1d3; font-size:.85rem; line-height:1.8; }
+      .button-light{
+        background:#f4efe8; color:var(--olive); padding:15px 22px; font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+      }
+
+      .booking-modal{
+        position:fixed; inset:0; background:rgba(16,22,16,.55); display:grid; place-items:center; padding:1.5rem; z-index:60;
+      }
+      .booking-panel{
+        position:relative; width:min(520px,100%); background:var(--paper); padding:2.2rem 2rem 1.6rem; box-shadow:var(--shadow);
+      }
+      .close-btn{
+        position:absolute; top:1rem; right:1rem; width:36px; height:36px; border:none; background:transparent; font-size:1.8rem; cursor:pointer; color:var(--muted);
+      }
+      .booking-panel h2{
+        margin:.5rem 0 .8rem; font-family:var(--serif); font-size:3rem; letter-spacing:-.04em;
+      }
+      .booking-panel p{
+        margin:0 0 1.2rem; color:var(--muted); line-height:1.75; font-size:.9rem;
+      }
+      .booking-form{
+        display:grid; grid-template-columns:1fr 1fr; gap:1rem;
+      }
+      .field{
+        display:grid; gap:.5rem; font-size:9px; letter-spacing:.18em; color:var(--muted); text-transform:uppercase;
+      }
+      .field.full{ grid-column:1 / -1; }
+      .field input, .field select{
+        width:100%; padding:.85rem .85rem; border:1px solid rgba(29,36,29,.18); background:#fffdf9;
+      }
+      .booking-panel .button-dark{
+        grid-column:1 / -1; margin-top:.5rem; width:100%;
+      }
+      .success-box{
+        text-align:center; padding:1rem 0 .4rem;
+      }
+      .success-box .badge{
+        display:grid; place-items:center; width:60px; height:60px; border-radius:50%; margin:0 auto 1rem; background:#dfe8d1; color:var(--olive); font-size:2.2rem;
+      }
+      .success-box h2{
+        margin:0 0 .6rem; font-size:2.7rem;
+      }
+      .success-box p{
+        margin:0 0 1rem;
+      }
+      .footer{
+        display:flex; align-items:center; justify-content:space-between; gap:1.2rem;
+        padding:2.2rem 6.5%; background:#1e241f; color:#f5f2ec;
+      }
+      .footer small{
+        display:block; color:#c9c6bf; font-size:9px; letter-spacing:.18em; text-transform:uppercase; margin-top:6px;
+      }
+      .footer-links{ display:flex; gap:1.6rem; font-size:.72rem; color:#dfe0d4; }
+      .footer-links a:hover{ color:var(--gold); }
+
+      [data-reveal]{
+        opacity:0;
+        transform:translateY(22px);
+        transition:opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1);
+      }
+      [data-reveal].visible{ opacity:1; transform:translateY(0); }
+
+      @media (max-width:920px){
+        .hero, .story-grid, .visit-layout{ grid-template-columns:1fr; }
+        .dish-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+        .story-values, .timeline, .team-row{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+      }
+      @media (max-width:700px){
+        .nav-links{ display:none; }
+        .menu-toggle{ display:block; }
+        .nav-links.mobile-open{
+          position:absolute; top:80px; left:0; right:0; display:flex; flex-direction:column; align-items:flex-start;
+          padding:1.2rem 6.5%; background:rgba(243,239,230,.97); border-bottom:1px solid rgba(29,36,29,.12);
+        }
+        .hero{ padding-top:4rem; }
+        .hero-visual{ min-height:440px; }
+        .hero-card{ height:420px; }
+        .floating-tag{ width:110px; height:110px; left:-12px; }
+        .dish-grid, .story-values, .timeline, .team-row{ grid-template-columns:1fr; }
+        .section-head, .callout{ display:block; }
+        .callout{ padding:1.6rem; }
+        .callout .button-light{ margin-top:1rem; }
+        .page-banner{ padding-top:4rem; }
+        .footer{ flex-direction:column; align-items:flex-start; }
+      }
+      @media (prefers-reduced-motion:reduce){
+        *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+        [data-reveal]{opacity:1;transform:none}
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const { useEffect, useState } = React;
+      const photo = (id, w = 1200) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+
+      const dishes = [
+        { name: "Burrata & late tomatoes", tag: "Garden pick", price: "$16", description: "Stone fruit, basil oil, toasted sourdough and a pinch of sea salt.", image: "photo-1608039829572-78524f79c4c7" },
+        { name: "Wild mushroom toast", tag: "Little favorite", price: "$14", description: "Whipped ricotta, thyme honey and slow-roasted mushrooms over country loaf.", image: "photo-1559847844-5315695dadae" },
+        { name: "Roast chicken Sunday", tag: "For the table", price: "$29", description: "Half bird, lemon pan jus, crispy potatoes and buttery greens.", image: "photo-1544025162-d76694265947" },
+        { name: "Hand-cut pappardelle", tag: "House classic", price: "$26", description: "Red wine braise, parmesan cream and a crack of black pepper.", image: "photo-1551183053-bf91a1d81141" },
+        { name: "Brown butter peach cake", tag: "Seasonal", price: "$12", description: "Warm peaches, soft cream and a little caramelized butter breeze.", image: "photo-1482049016688-2d3e1b311543" },
+        { name: "Olive oil soft serve", tag: "Sweet finish", price: "$10", description: "A silky scoop with flaky salt, candied citrus and olive oil.", image: "photo-1563805042-7684c019e1cb" }
+      ];
+      const categories = ["All", "Starters", "Mains", "Desserts"];
+
+      function useReveal(dependency) {
+        useEffect(() => {
+          const items = document.querySelectorAll('[data-reveal]');
+          if (typeof IntersectionObserver === "undefined") {
+            items.forEach((item) => item.classList.add('visible'));
+            return undefined;
+          }
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.15 });
+          items.forEach((item) => observer.observe(item));
+          return () => observer.disconnect();
+        }, [dependency]);
+      }
+
+      function Nav({ current, onBook }) {
+        const [mobileOpen, setMobileOpen] = useState(false);
+        return (
+          <nav className="nav">
+            <a href="index.html" className="brand">
+              morrow & thyme
+              <small>neighborhood kitchen · since 2018</small>
+            </a>
+            <div className={`nav-links ${mobileOpen ? 'mobile-open' : ''}`}>
+              <a href="index.html" aria-current={current === 'home' ? 'page' : undefined}>Home</a>
+              <a href="menu.html" aria-current={current === 'menu' ? 'page' : undefined}>Menu</a>
+              <a href="story.html" aria-current={current === 'story' ? 'page' : undefined}>Our story</a>
+              <a href="visit.html" aria-current={current === 'visit' ? 'page' : undefined}>Visit</a>
+            </div>
+            <button className="nav-cta" onClick={() => { setMobileOpen(false); onBook(); }}>Save a table</button>
+            <button className="menu-toggle" aria-label="Toggle navigation" aria-expanded={mobileOpen} onClick={() => setMobileOpen((v) => !v)}>{mobileOpen ? "×" : "☰"}</button>
+          </nav>
+        );
+      }
+
+      function Footer() {
+        return (
+          <footer className="footer">
+            <div className="brand" style={{ fontSize: '1.6rem', color: '#f5f2ec' }}>
+              morrow & thyme
+              <small>good things grow around a table</small>
+            </div>
+            <div className="footer-links">
+              <a href="menu.html">Menu</a>
+              <a href="story.html">Story</a>
+              <a href="visit.html">Visit</a>
+            </div>
+          </footer>
+        );
+      }
+
+      function BookingModal({ isOpen, onClose }) {
+        const [submitted, setSubmitted] = useState(false);
+        const [requestEmail, setRequestEmail] = useState("");
+        useEffect(() => {
+          if (!isOpen) return undefined;
+          const closeOnEscape = (event) => {
+            if (event.key === "Escape") onClose();
+          };
+          window.addEventListener("keydown", closeOnEscape);
+          return () => window.removeEventListener("keydown", closeOnEscape);
+        }, [isOpen, onClose]);
+        if (!isOpen) return null;
+        function prepareRequest(event) {
+          event.preventDefault();
+          const form = new FormData(event.currentTarget);
+          const name = form.get("name");
+          const email = form.get("email");
+          const date = form.get("date");
+          const guests = form.get("guests");
+          const subject = encodeURIComponent(`Table request for ${name}`);
+          const body = encodeURIComponent(
+            `Hi Morrow & Thyme,\n\nI'd like to request a table.\n\nName: ${name}\nEmail: ${email}\nDate: ${date}\nGuests: ${guests}\n\nPlease let me know if you have availability.`
+          );
+          setRequestEmail(`mailto:hello@morrowandthyme.com?subject=${subject}&body=${body}`);
+          setSubmitted(true);
+        }
+        return (
+          <div className="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-title" onClick={(e) => e.target === e.currentTarget && onClose()}>
+            <div className="booking-panel">
+              <button className="close-btn" onClick={onClose} aria-label="Close">×</button>
+              {submitted ? (
+                <div className="success-box">
+                  <div className="badge">✓</div>
+                  <h2 id="booking-title">One more little step.</h2>
+                  <p>Your request is ready. Send it from your email app so our team can confirm availability. You can also reach us at hello@morrowandthyme.com.</p>
+                  <a className="button-dark" href={requestEmail} style={{ display: "inline-block", marginBottom: "1rem" }}>Email the restaurant</a>
+                  <br />
+                  <button className="button-dark" onClick={onClose}>Back to the room</button>
+                </div>
+              ) : (
+                <>
+                  <div className="eyebrow">There’s a place for you</div>
+                  <h2 id="booking-title">Save a table.</h2>
+                  <p>Tell us when you’re coming, and we’ll save a warm corner for the evening.</p>
+                  <form className="booking-form" onSubmit={prepareRequest}>
+                    <label className="field">
+                      Name
+                      <input name="name" required placeholder="Your name" />
+                    </label>
+                    <label className="field">
+                      Email
+                      <input name="email" type="email" required placeholder="you@example.com" />
+                    </label>
+                    <label className="field">
+                      Date
+                      <input name="date" type="date" min={new Date().toISOString().slice(0, 10)} required />
+                    </label>
+                    <label className="field">
+                      Guests
+                      <select name="guests" defaultValue="2">
+                        <option value="1">1 guest</option>
+                        <option value="2">2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                        <option value="5">5 guests</option>
+                        <option value="6">6 guests</option>
+                      </select>
+                    </label>
+                    <button className="button-dark" type="submit">Request a table</button>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        );
+      }
+
+      function HomePage() {
+        const [bookingOpen, setBookingOpen] = useState(false);
+        useReveal();
+        return (
+          <div className="page-shell">
+            <div className="announcement"><span className="dot">✦</span> A good table is waiting for you <span className="dot">✦</span></div>
+            <Nav current="home" onBook={() => setBookingOpen(true)} />
+            <main>
+              <section className="hero">
+                <div className="hero-copy" data-reveal>
+                  <div className="eyebrow">Good food. No big occasion needed.</div>
+                  <h1>A little more room for <em>joy.</em></h1>
+                  <p>Season-led plates, wine poured generously, and long candlelit evenings that make you forget to check your phone.</p>
+                  <div className="hero-actions">
+                    <button className="button-dark" onClick={() => setBookingOpen(true)}>Come hungry</button>
+                    <a href="menu.html" className="text-link">Take a peek at the menu</a>
+                  </div>
+                  <div className="hero-meta">
+                    <span className="avatars">
+                      <span className="avatar" />
+                      <span className="avatar" />
+                      <span className="avatar" />
+                    </span>
+                    <span>A neighborhood favorite, table after table.</span>
+                  </div>
+                </div>
+                <div className="hero-visual" data-reveal>
+                  <div className="hero-card">
+                    <img src={photo("photo-1517248135467-4c7edcad34c4", 1200)} alt="Restaurant dining room with warm lighting" />
+                  </div>
+                  <div className="floating-tag">Come as <br/>you are <br/>✦ stay awhile</div>
+                  <div className="floating-caption">Somewhere to settle in · est. 2018</div>
+                </div>
+              </section>
+              <div className="marquee">
+                <div className="marquee-track">
+                  {Array.from({ length: 2 }).map((_, i) => (
+                    <div key={i}>
+                      {['From our garden, when we can', 'For the table, not the feed', 'A little butter never hurt', 'Stay for one more glass'].map((item) => (
+                        <span key={item + i} className="marquee-item">{item}<span>✦</span></span>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <section className="menu-showcase">
+                <div className="section-head" data-reveal>
+                  <div>
+                    <div className="eyebrow">A menu with the season</div>
+                    <h2 className="page-heading" style={{ margin: 0 }}>Made today. <br /> Gone tomorrow.</h2>
+                  </div>
+                  <p>We cook what looks good at the market. The menu changes with the weather, the farmers, and our moods.</p>
+                </div>
+                <div className="dish-grid">
+                  {dishes.slice(0, 3).map((dish, index) => (
+                    <article className="dish-card" key={dish.name} data-reveal style={{ transitionDelay: `${index * 100}ms` }}>
+                      <img src={photo(dish.image, 900)} alt={dish.name} />
+                      <div className="dish-content">
+                        <div className="dish-top">
+                          <div className="dish-name">{dish.name}</div>
+                          <div className="dish-price">{dish.price}</div>
+                        </div>
+                        <span className="dish-tag">{dish.tag}</span>
+                        <p className="dish-copy">{dish.description}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+              <section className="section">
+                <div className="story-grid">
+                  <div className="story-stack" data-reveal>
+                    <img src={photo("photo-1559339352-11d035aa65de", 900)} alt="Candlelit dinner table" />
+                    <img src={photo("photo-1551218808-94e220e084d2", 700)} alt="Fresh ingredients in kitchen" />
+                  </div>
+                  <div className="story-text" data-reveal>
+                    <div className="eyebrow">Not quite a secret anymore</div>
+                    <h2 className="page-heading" style={{ marginTop: 10, marginBottom: 15 }}>We started with a kitchen and a very long table.</h2>
+                    <p>Morrow & Thyme began with one idea: dinner should feel like being invited over, even on a Tuesday. We found a quiet room, filled it with neighbors, and kept the extra chair out for anyone who wandered in hungry.</p>
+                    <a className="text-link" href="story.html">Find your way to us</a>
+                    <div className="signature" style={{ marginTop: '1.5rem' }}>See you around the table,</div>
+                    <div style={{ fontSize: 10, letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--muted)', marginTop: '.8rem' }}>Jo & the Morrow crew</div>
+                  </div>
+                </div>
+              </section>
+              <section className="quote-band">
+                <div className="quote-mark">“</div>
+                <blockquote>The sort of place where dinner becomes three hours and nobody minds one bit.</blockquote>
+                <cite>— Someone who came in for a quick bite</cite>
+              </section>
+              <section className="section">
+                <div className="visit-layout">
+                  <div data-reveal>
+                    <div className="eyebrow">Your table is close by</div>
+                    <h2 className="page-heading" style={{ marginTop: 10, marginBottom: 20 }}>Find us where the good evenings are.</h2>
+                    <div className="visit-list">
+                      <div className="visit-item">
+                        <div className="label">Come find us</div>
+                        <div className="value">38 Willow Lane<br/>Brooklyn, NY 11222</div>
+                      </div>
+                      <div className="visit-item">
+                        <div className="label">When the lights are on</div>
+                        <div className="value">Tue–Thu · 5–10 pm<br/>Fri–Sun · 12–11 pm</div>
+                      </div>
+                      <div className="visit-item">
+                        <div className="label">Say hello</div>
+                        <div className="value">hello@morrowandthyme.com<br/>(718) 555-0148</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="map-card" data-reveal>
+                    <img src={photo("photo-1519501025264-65ba15a82390", 1000)} alt="Brooklyn neighborhood map" />
+                    <div className="map-pin">
+                      <strong>38 Willow</strong>
+                      <span>Brooklyn · come on in</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+            <Footer />
+            <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
+          </div>
+        );
+      }
+
+      function MenuPage() {
+        const [activeCategory, setActiveCategory] = useState("All");
+        const [bookingOpen, setBookingOpen] = useState(false);
+        const visibleDishes = activeCategory === "All" ? dishes : dishes.filter(d => {
+          if (activeCategory === "Starters") return ["Burrata & late tomatoes","Wild mushroom toast"].includes(d.name);
+          if (activeCategory === "Mains") return ["Roast chicken Sunday","Hand-cut pappardelle"].includes(d.name);
+          if (activeCategory === "Desserts") return ["Brown butter peach cake","Olive oil soft serve"].includes(d.name);
+          return true;
+        });
+        useReveal(activeCategory);
+        return (
+          <div className="page-shell">
+            <div className="announcement"><span className="dot">✦</span> A seasonal menu that changes with the weather <span className="dot">✦</span></div>
+            <Nav current="menu" onBook={() => setBookingOpen(true)} />
+            <header className="page-banner">
+              <div className="crumb">Menu / Seasonal kitchen</div>
+              <h1>Made to share. <em style={{ fontStyle: 'italic', color: 'var(--terracotta)' }}>Meant to linger.</em></h1>
+              <p>Our menu follows the market. We build it around early greens, warm bread, bright citrus, and the sort of dishes that make a table feel full before the first glass is poured.</p>
+            </header>
+            <main className="page-content">
+              <div className="menu-intro" style={{ display:'flex', justifyContent:'space-between', gap:'1rem', alignItems:'end' }}>
+                <div>
+                  <div className="eyebrow">This week on the board</div>
+                  <h2 className="page-heading" style={{ marginTop: 10, marginBottom: 0 }}>A few things we love right now.</h2>
+                </div>
+                <div className="menu-note">All plates are made to be shared. There’s always a little extra bread, a little extra char, and a little extra room.</div>
+              </div>
+              <div className="filter-row">
+                {categories.map((cat) => (
+                  <button key={cat} className={`filter ${activeCategory === cat ? 'active' : ''}`} aria-pressed={activeCategory === cat} onClick={() => setActiveCategory(cat)}>{cat}</button>
+                ))}
+              </div>
+              <div className="dish-grid">
+                {visibleDishes.map((dish, index) => (
+                  <article className="dish-card" key={dish.name} data-reveal style={{ transitionDelay: `${index * 80}ms` }}>
+                    <img src={photo(dish.image, 900)} alt={dish.name} />
+                    <div className="dish-content">
+                      <div className="dish-top">
+                        <div className="dish-name">{dish.name}</div>
+                        <div className="dish-price">{dish.price}</div>
+                      </div>
+                      <span className="dish-tag">{dish.tag}</span>
+                      <p className="dish-copy">{dish.description}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+              <div className="callout">
+                <div>
+                  <div className="eyebrow" style={{ color: '#f4d09d' }}>Dinner with us</div>
+                  <h3>Bring your appetite. We’ll handle the rest.</h3>
+                </div>
+                <button className="button-light" onClick={() => setBookingOpen(true)}>Save a table</button>
+              </div>
+            </main>
+            <Footer />
+            <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
+          </div>
+        );
+      }
+
+      function StoryPage() {
+        const [bookingOpen, setBookingOpen] = useState(false);
+        useReveal();
+        return (
+          <div className="page-shell">
+            <div className="announcement"><span className="dot">✦</span> Warm rooms, good company, slower evenings <span className="dot">✦</span></div>
+            <Nav current="story" onBook={() => setBookingOpen(true)} />
+            <header className="page-banner">
+              <div className="crumb">Our story / Small beginnings</div>
+              <h1>We wanted a room where good evenings felt easy.</h1>
+              <p>What started as a tiny neighborhood dinner has grown into a table full of regulars, farmers, and friends who decided a little slower was exactly what they needed.</p>
+            </header>
+            <main className="page-content">
+              <div className="story-grid">
+                <div className="story-stack" data-reveal>
+                  <img src={photo("photo-1559339352-11d035aa65de", 1000)} alt="Restaurant dining room and table setting" />
+                  <img src={photo("photo-1528712306091-ed0763094c98", 700)} alt="Restaurant chef preparing plates" />
+                </div>
+                <div className="story-text" data-reveal>
+                  <div className="eyebrow">More than a restaurant</div>
+                  <h2 className="page-heading" style={{ marginTop: 10, marginBottom: 15 }}>A neighborhood table, built by people who stayed.</h2>
+                  <p>We started with one lamp, two friends, and a menu built around bread, tomatoes, and whatever looked best on the market carts that morning. The room filled quickly, and before long it became the kind of place you walk into for a quick glass and leave three hours later.</p>
+                  <p>We still keep it personal: the same long table, the same handmade pasta, and the same sense that everyone is welcome to stay just a little longer.</p>
+                  <div className="signature">See you around the table,</div>
+                </div>
+              </div>
+              <div className="story-values">
+                <div className="story-card" data-reveal>
+                  <strong>Seasonal</strong>
+                  <p>We cook with the rhythm of the market and let the ingredients lead the menu.</p>
+                </div>
+                <div className="story-card" data-reveal>
+                  <strong>Thoughtful</strong>
+                  <p>Every detail matters — from the lighting to the bread basket to the last glass poured.</p>
+                </div>
+                <div className="story-card" data-reveal>
+                  <strong>Welcoming</strong>
+                  <p>There’s room for the quick catch-up, the long catch-up, and the unplanned regulars.</p>
+                </div>
+              </div>
+              <div className="timeline" style={{ marginTop: '2rem' }}>
+                <div className="timeline-card" data-reveal>
+                  <strong>2018</strong>
+                  <h3 style={{ margin: '0.6rem 0', fontFamily:'var(--serif)', fontSize:'2rem' }}>First table set</h3>
+                  <p>We opened with a tiny menu and a room built for long conversations and generous pours.</p>
+                </div>
+                <div className="timeline-card" data-reveal>
+                  <strong>2021</strong>
+                  <h3 style={{ margin: '0.6rem 0', fontFamily:'var(--serif)', fontSize:'2rem' }}>Garden and pantry</h3>
+                  <p>We added backyard herbs, a rotating pantry, and even more of our local neighbors to the dinner list.</p>
+                </div>
+                <div className="timeline-card" data-reveal>
+                  <strong>Today</strong>
+                  <h3 style={{ margin: '0.6rem 0', fontFamily:'var(--serif)', fontSize:'2rem' }}>Still slow</h3>
+                  <p>The table is still long, the room still warm, and the evenings still feel like they’re ours to savor.</p>
+                </div>
+              </div>
+              <div className="team-row">
+                <div className="team-card" data-reveal>
+                  <img src={photo("photo-1544005313-94ddf0286df2", 300)} alt="Chef portrait" />
+                  <div>
+                    <strong>Jo</strong>
+                    <span>Chef & founder</span>
+                  </div>
+                </div>
+                <div className="team-card" data-reveal>
+                  <img src={photo("photo-1500648767791-00dcc994a43e", 300)} alt="Manager portrait" />
+                  <div>
+                    <strong>Luca</strong>
+                    <span>Dining room</span>
+                  </div>
+                </div>
+                <div className="team-card" data-reveal>
+                  <img src={photo("photo-1494790108377-be9c29b29330", 300)} alt="Host portrait" />
+                  <div>
+                    <strong>Mara</strong>
+                    <span>Host & flowers</span>
+                  </div>
+                </div>
+              </div>
+            </main>
+            <Footer />
+            <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
+          </div>
+        );
+      }
+
+      function VisitPage() {
+        const [bookingOpen, setBookingOpen] = useState(false);
+        useReveal();
+        return (
+          <div className="page-shell">
+            <div className="announcement"><span className="dot">✦</span> Come by for dinner, coffee, or a slow glass <span className="dot">✦</span></div>
+            <Nav current="visit" onBook={() => setBookingOpen(true)} />
+            <header className="page-banner">
+              <div className="crumb">Visit / Plan your evening</div>
+              <h1>We’re just around the corner from a good night.</h1>
+              <p>Find us where the sidewalks glow a little warmer, dinner runs long, and the room feels like it took a deep breath before opening up.</p>
+            </header>
+            <main className="page-content">
+              <div className="visit-layout">
+                <div data-reveal>
+                  <div className="eyebrow">Come by</div>
+                  <h2 className="page-heading" style={{ marginTop: 10, marginBottom: 18 }}>We’ll save a corner for you.</h2>
+                  <div className="visit-list">
+                    <div className="visit-item">
+                      <div className="label">Address</div>
+                      <div className="value">38 Willow Lane<br />Brooklyn, NY 11222</div>
+                    </div>
+                    <div className="visit-item">
+                      <div className="label">Hours</div>
+                      <div className="value">Tue–Thu · 5–10 pm<br />Fri–Sun · 12–11 pm</div>
+                    </div>
+                    <div className="visit-item">
+                      <div className="label">Contact</div>
+                      <div className="value">
+                        hello@morrowandthyme.com<br />
+                        (718) 555-0148
+                      </div>
+                    </div>
+                  </div>
+                  <div className="reservation-card" style={{ marginTop:'2rem', background:'var(--paper)', padding:'1.6rem', border:'1px solid rgba(29,36,29,.08)' }}>
+                    <h3 style={{ margin:'0 0 0.7rem', fontFamily:'var(--serif)', fontSize:'2.2rem' }}>Need a seat?</h3>
+                    <p>Walk-ins are always welcome, but a quick note helps us set the table and prepare a few favorite things for the evening.</p>
+                    <button className="button-dark" style={{ marginTop:'1rem' }} onClick={() => setBookingOpen(true)}>Request a table</button>
+                  </div>
+                </div>
+                <div className="map-card" data-reveal>
+                  <img src={photo("photo-1486406146926-c627a92ad1ab", 1200)} alt="City neighborhood" />
+                  <div className="map-pin">
+                    <strong>38 Willow</strong>
+                    <span>Brooklyn · around the corner</span>
+                  </div>
+                </div>
+              </div>
+            </main>
+            <Footer />
+            <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
+          </div>
+        );
+      }
+
+      function App() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const pageTitle = {
+          'index.html': 'Morrow & Thyme | Home',
+          'menu.html': 'Morrow & Thyme | Menu',
+          'story.html': 'Morrow & Thyme | Our Story',
+          'visit.html': 'Morrow & Thyme | Visit'
+        }[currentPage] || 'Morrow & Thyme | Home';
+        const pageDescription = {
+          'index.html': 'Morrow & Thyme - a warm neighborhood restaurant for slow dinners and seasonal plates.',
+          'menu.html': 'Explore seasonal dishes and house favorites at Morrow & Thyme, a neighborhood restaurant in Brooklyn.',
+          'story.html': 'Meet the people and story behind Morrow & Thyme, a welcoming neighborhood restaurant in Brooklyn.',
+          'visit.html': 'Find Morrow & Thyme in Brooklyn, view restaurant hours, and request a table.'
+        }[currentPage] || 'Morrow & Thyme - a warm neighborhood restaurant for slow dinners and seasonal plates.';
+        useEffect(() => {
+          document.title = pageTitle;
+          const description = document.querySelector('meta[name="description"]');
+          if (description) description.content = pageDescription;
+        }, [pageTitle, pageDescription]);
+        if (currentPage === 'menu.html') return <MenuPage />;
+        if (currentPage === 'story.html') return <StoryPage />;
+        if (currentPage === 'visit.html') return <VisitPage />;
+        return <HomePage />;
+      }
+
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+  </body>
+</html>

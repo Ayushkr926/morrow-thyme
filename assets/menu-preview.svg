@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Morrow &amp; Thyme menu page preview</title>
+  <desc id="desc">Illustrated seasonal menu page with dish cards, category filters, and a dinner reservation callout.</desc>
+  <rect width="960" height="520" rx="18" fill="#f3efe6"/>
+  <rect width="960" height="25" rx="18" fill="#374733"/><rect y="17" width="960" height="8" fill="#374733"/>
+  <text x="480" y="17" text-anchor="middle" fill="#f3efe6" font-family="Arial,sans-serif" font-size="8" letter-spacing="2">A SEASONAL MENU THAT CHANGES WITH THE WEATHER</text>
+  <text x="52" y="65" fill="#1d241d" font-family="Georgia,serif" font-size="27" letter-spacing="-2">morrow &amp; thyme</text>
+  <text x="53" y="80" fill="#6d7267" font-family="Arial,sans-serif" font-size="7" letter-spacing="2">NEIGHBORHOOD KITCHEN · SINCE 2018</text>
+  <g fill="#374733" font-family="Arial,sans-serif" font-size="10"><text x="600" y="67">Home</text><text x="655" y="67" fill="#c85f46">Menu</text><text x="705" y="67">Our story</text><text x="780" y="67">Visit</text></g>
+  <rect x="833" y="48" width="77" height="31" fill="#374733"/><text x="871" y="67" text-anchor="middle" fill="#fffaf0" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">BOOK A TABLE</text>
+  <path d="M0 94h960" stroke="#d7d0c3"/>
+  <text x="62" y="124" fill="#c85f46" font-family="Arial,sans-serif" font-size="8" letter-spacing="2">MENU / SEASONAL KITCHEN</text>
+  <text x="60" y="171" fill="#1d241d" font-family="Georgia,serif" font-size="39" letter-spacing="-2">Made to share. <tspan fill="#c85f46" font-style="italic">Meant to linger.</tspan></text>
+  <text x="62" y="198" fill="#6d7267" font-family="Arial,sans-serif" font-size="11">Market-fresh greens, warm bread, bright citrus, and dishes made for a full table.</text>
+  <text x="62" y="240" fill="#c85f46" font-family="Arial,sans-serif" font-size="8" letter-spacing="2">THIS WEEK ON THE BOARD</text>
+  <text x="60" y="274" fill="#1d241d" font-family="Georgia,serif" font-size="27">A few things we love right now.</text>
+  <g font-family="Arial,sans-serif" font-size="9">
+    <rect x="62" y="294" width="55" height="25" rx="12" fill="#374733"/><text x="89" y="310" text-anchor="middle" fill="#fffaf0">All</text>
+    <rect x="126" y="294" width="83" height="25" rx="12" fill="#ebe4d7"/><text x="167" y="310" text-anchor="middle" fill="#374733">Starters</text>
+    <rect x="218" y="294" width="66" height="25" rx="12" fill="#ebe4d7"/><text x="251" y="310" text-anchor="middle" fill="#374733">Mains</text>
+    <rect x="293" y="294" width="77" height="25" rx="12" fill="#ebe4d7"/><text x="331" y="310" text-anchor="middle" fill="#374733">Desserts</text>
+  </g>
+  <g>
+    <rect x="62" y="335" width="255" height="118" fill="#d8c29a"/>
+    <ellipse cx="190" cy="390" rx="70" ry="39" fill="#f3efe6"/><ellipse cx="190" cy="390" rx="55" ry="28" fill="#c98b45"/>
+    <circle cx="171" cy="386" r="13" fill="#fff4d8"/><circle cx="198" cy="397" r="12" fill="#fff4d8"/><circle cx="210" cy="379" r="10" fill="#cf6546"/>
+    <path d="M155 389q13-20 23 0m17 11q12-19 22-4" fill="none" stroke="#69804b" stroke-width="4"/>
+    <text x="75" y="446" fill="#374733" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">BURRATA &amp; LATE TOMATOES</text>
+    <rect x="333" y="335" width="255" height="118" fill="#bbb58d"/>
+    <ellipse cx="460" cy="389" rx="68" ry="37" fill="#f3efe6"/><path d="M415 395q4-44 83-23l10 23z" fill="#c79b61"/>
+    <circle cx="445" cy="373" r="10" fill="#77563e"/><circle cx="470" cy="367" r="12" fill="#92704c"/><circle cx="489" cy="381" r="10" fill="#604c3e"/>
+    <text x="346" y="446" fill="#374733" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">WILD MUSHROOM TOAST</text>
+    <rect x="604" y="335" width="255" height="118" fill="#dfb476"/>
+    <ellipse cx="730" cy="391" rx="69" ry="37" fill="#f3efe6"/><path d="M686 391q10-32 44-27 34 8 45 29-34 20-89-2" fill="#a65f3f"/>
+    <path d="M710 378q12-19 23 0m2 12q14-18 27-4" fill="none" stroke="#80925b" stroke-width="4"/>
+    <text x="617" y="446" fill="#374733" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">ROAST CHICKEN SUNDAY</text>
+  </g>
+  <text x="62" y="485" fill="#6d7267" font-family="Arial,sans-serif" font-size="9" letter-spacing="1">MADE TODAY · GONE TOMORROW</text>
+  <rect x="745" y="468" width="165" height="30" fill="#374733"/><text x="827" y="487" text-anchor="middle" fill="#fffaf0" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">SAVE A TABLE</text>
+</svg>

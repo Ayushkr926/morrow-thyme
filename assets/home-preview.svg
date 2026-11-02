@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Morrow &amp; Thyme home page preview</title>
+  <desc id="desc">Illustrated preview of the restaurant home page with its warm dining room, seasonal menu, and olive-green palette.</desc>
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b7794d"/><stop offset="1" stop-color="#342d24"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f0c77c" stop-opacity=".85"/><stop offset="1" stop-color="#f0c77c" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="960" height="520" rx="18" fill="#f3efe6"/>
+  <rect x="0" y="0" width="960" height="25" rx="18" fill="#374733"/>
+  <rect x="0" y="17" width="960" height="8" fill="#374733"/>
+  <text x="480" y="17" text-anchor="middle" fill="#f3efe6" font-family="Arial,sans-serif" font-size="8" letter-spacing="2">A GOOD TABLE IS WAITING FOR YOU</text>
+  <text x="52" y="65" fill="#1d241d" font-family="Georgia,serif" font-size="27" letter-spacing="-2">morrow &amp; thyme</text>
+  <text x="53" y="80" fill="#6d7267" font-family="Arial,sans-serif" font-size="7" letter-spacing="2">NEIGHBORHOOD KITCHEN · SINCE 2018</text>
+  <g fill="#374733" font-family="Arial,sans-serif" font-size="10"><text x="600" y="67">Home</text><text x="655" y="67">Menu</text><text x="705" y="67">Our story</text><text x="780" y="67">Visit</text></g>
+  <rect x="833" y="48" width="77" height="31" fill="#374733"/>
+  <text x="871" y="67" text-anchor="middle" fill="#fffaf0" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">BOOK A TABLE</text>
+  <path d="M0 94h960" stroke="#d7d0c3"/>
+  <text x="62" y="150" fill="#c85f46" font-family="Arial,sans-serif" font-size="9" font-weight="bold" letter-spacing="2">GOOD FOOD. NO BIG OCCASION NEEDED.</text>
+  <text x="58" y="219" fill="#1d241d" font-family="Georgia,serif" font-size="59" letter-spacing="-3">A little more</text>
+  <text x="58" y="278" fill="#1d241d" font-family="Georgia,serif" font-size="59" letter-spacing="-3">room for <tspan fill="#c85f46" font-style="italic">joy.</tspan></text>
+  <text x="62" y="319" fill="#6d7267" font-family="Arial,sans-serif" font-size="12">Season-led plates, wine poured generously, and long</text>
+  <text x="62" y="339" fill="#6d7267" font-family="Arial,sans-serif" font-size="12">candlelit evenings that make you forget your phone.</text>
+  <rect x="62" y="370" width="124" height="38" fill="#374733"/>
+  <text x="124" y="394" text-anchor="middle" fill="#fffaf0" font-family="Arial,sans-serif" font-size="9" letter-spacing="1">COME HUNGRY</text>
+  <text x="208" y="394" fill="#1d241d" font-family="Arial,sans-serif" font-size="9" letter-spacing="1">TAKE A PEEK AT THE MENU →</text>
+  <rect x="525" y="116" width="365" height="326" rx="3" fill="url(#room)"/>
+  <rect x="548" y="139" width="319" height="280" fill="#57483a"/>
+  <path d="M548 310h319v109H548z" fill="#2b2924"/>
+  <rect x="570" y="157" width="74" height="104" fill="#2d392e"/><rect x="655" y="157" width="74" height="104" fill="#344532"/><rect x="740" y="157" width="105" height="104" fill="#27352c"/>
+  <path d="M570 262h74m11 0h74m11 0h105" stroke="#b48b61" stroke-width="4"/>
+  <path d="M609 139v42m-27 0h54l-10 33h-34z" fill="#f0c77c"/><path d="M692 139v42m-27 0h54l-10 33h-34z" fill="#f0c77c"/><path d="M793 139v42m-27 0h54l-10 33h-34z" fill="#f0c77c"/>
+  <ellipse cx="705" cy="331" rx="113" ry="35" fill="#d2c2a3"/><ellipse cx="705" cy="325" rx="98" ry="26" fill="#f3efe6"/>
+  <ellipse cx="705" cy="322" rx="52" ry="13" fill="#a96c37"/><circle cx="681" cy="321" r="7" fill="#cb6746"/><circle cx="709" cy="318" r="8" fill="#70844e"/><circle cx="730" cy="325" r="6" fill="#dbb65f"/>
+  <path d="M705 296v-37m0 12c-18-11-25-3-18 7m18 2c16-16 25-8 16 3" fill="none" stroke="#779060" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="705" cy="245" r="23" fill="url(#glow)"/>
+  <rect x="534" y="404" width="138" height="54" rx="27" fill="#efd7b0"/>
+  <text x="603" y="426" text-anchor="middle" fill="#374733" font-family="Georgia,serif" font-size="13">Come as you are</text>
+  <text x="603" y="441" text-anchor="middle" fill="#6d7267" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">STAY AWHILE ✦</text>
+  <text x="62" y="474" fill="#6d7267" font-family="Arial,sans-serif" font-size="9" letter-spacing="1">A NEIGHBORHOOD FAVORITE, TABLE AFTER TABLE.</text>
+  <text x="895" y="492" text-anchor="end" fill="#6d7267" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">MORROW &amp; THYME · BROOKLYN</text>
+</svg>
